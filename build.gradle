@@ -72,7 +72,7 @@ publishing {
         gpr(MavenPublication) {
             groupId 'tech.whocodes.jampack'
             artifactId 'jampack-api'
-            version '1.0.1-beta'
+            version '1.0.1-SNAPSHOT'
 
             from components.java
         }
