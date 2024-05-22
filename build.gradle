@@ -69,9 +69,6 @@ subprojects {
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
         gpr(MavenPublication) {
             groupId 'tech.whocodes.jampack'
             artifactId 'jampack-api'
