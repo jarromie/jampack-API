@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    compileOnly project(":InteractionApi")
+}
+
+sourceSets {
+
+    main {
+
+        java {
+            srcDir "src"
+        }
+
+    }
+}
+
+group 'tech.whocodes.jampack'
+version '1.0.0'
+
+test {
+    useJUnitPlatform()
+}
+
+task JamJar(type: Jar) {
+    manifest {
+    }
+    archiveBaseName = 'jampack-utilityapi'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+tasks.register("prepareKotlinBuildScriptModel"){}
