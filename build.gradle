@@ -72,14 +72,18 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
         }
+        gpr(MavenPublication) {
+            from components.java
+        }
     }
     repositories {
         maven {
+            name = "jampack-API"
+            url = uri("https://maven.pkg.github.com/jarromie/jampack-API")
             credentials {
-                username 'admin'
-                password 'password'
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
             }
-            url "http://baseUrl/artifactory/libs-release-local"
         }
     }
 }
