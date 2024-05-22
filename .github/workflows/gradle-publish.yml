@@ -9,10 +9,9 @@ name: Gradle Build & Publish Package
 
 on:
   push:
-    branches:
-      - main
-#  release:
-#    types: [created]
+    branches: [gradle]
+  release:
+    types: [created]
 
 jobs:
   build:
