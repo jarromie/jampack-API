@@ -48,12 +48,11 @@ group = 'tech.whocodes.jampack'
 version = '1.0.1-beta'
 sourceCompatibility = "11"
 
-task JamJar(type: Jar) {
+jar {
     manifest {
     }
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
 }
 
 subprojects {
@@ -88,6 +87,7 @@ publishing {
         }
     }
 }
+
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
