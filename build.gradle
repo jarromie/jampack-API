@@ -73,13 +73,17 @@ publishing {
             from components.java
         }
         gpr(MavenPublication) {
+            groupId 'tech.whocodes.jampack'
+            artifactId 'jampack-api'
+            version '1.0.1-beta'
+
             from components.java
         }
     }
     repositories {
         maven {
             name = "jampack-API"
-            url = uri("https://maven.pkg.github.com/jarromie/jampack-API")
+            url = uri("https://maven.pkg.github.com/jarromie/jampack-api")
             credentials {
                 username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
                 password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
