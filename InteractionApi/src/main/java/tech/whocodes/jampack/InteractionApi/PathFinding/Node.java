@@ -6,14 +6,14 @@ public class Node {
     WorldPoint data;
     Node previous;
 
-    Node(WorldPoint data) {
+    public Node(WorldPoint data) {
         this.data = data;
     }
     Node(){
         this.data = null;
         this.previous = null;
     }
-    Node(WorldPoint data, Node previous) {
+    public Node(WorldPoint data, Node previous) {
         this.data = data;
         this.previous = previous;
     }
